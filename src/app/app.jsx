@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { HeaderComponent , InputContainer, ItemsContainer, MessageContainer } from "./twitSplit";
+import { HeaderComponent, InputContainer, MessageContainer, ItemsContainer } from "./news";
 import "./style/default-theme.scss";
 
 export class App extends Component {
@@ -29,7 +29,12 @@ export class App extends Component {
     }
 
     render() {
-        return (<div className="container"><div className="container-sub">{JSON.stringify(this.state.data)}f</div></div>);
+        return (<div className="news">
+            <HeaderComponent header={this.props.header} />
+            <InputContainer/>
+            <MessageContainer />
+            <ItemsContainer />
+        </div>);
     }
 
 }

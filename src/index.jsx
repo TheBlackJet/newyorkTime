@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 import {
-  createStore
+  createStore,
+  applyMiddleware,
+  compose
 } from 'redux';
-import App from './app/app';
+import thunk from 'redux-thunk';
+
+import App from './app/App';
 import rootReducer from './reducers';
 
 
@@ -13,12 +17,15 @@ import rootReducer from './reducers';
 
 const store = createStore(
   rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
 );
 
 ReactDOM.render(
     <Provider store={store}>
-      <App title="cool" />
+      <App header="New York Times" />
     </Provider>,
   document.getElementById('app')
 );
