@@ -3,7 +3,7 @@ import { MessageComponent } from "./MessageComponent";
 
 const mapStateToProps = (state) => {
     return {
-        message : ""
+        message : state.news.message
     }
 }
   

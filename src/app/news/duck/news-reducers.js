@@ -30,6 +30,13 @@ const newsReducer = (state = INITIAL_STATE, action) => {
             isModalBoxVisible: false,
             selected: {}
         }
+        case types.SHOW_ERROR_MESSAGE:
+        return {
+            ...state,
+            list: [],
+            selected: {},
+            message: action.message
+        }
         default: return state;
     }
 }
