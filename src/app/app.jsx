@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HeaderComponent, InputContainer, MessageContainer, ItemsContainer, ModalContainer } from "./news";
+import { HeaderComponent, InputContainer, MessageContainer, ItemsContainer, ModalContainer, PaginationContainer, LoaderContainer } from "./news";
 import "./style/default-theme.scss";
 
 export class App extends Component {
@@ -14,6 +14,8 @@ export class App extends Component {
             <HeaderComponent header={this.props.header} />
             <InputContainer/>
             <MessageContainer />
+            <PaginationContainer />
+            <LoaderContainer />
             <ItemsContainer />
             <ModalContainer />
         </div>);

@@ -9,7 +9,8 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => {
     return {
         searchString: state.news.searchString,
-        list: state.news.list
+        list: state.news.list,
+        searchString: state.news.searchString
     }
 }
   

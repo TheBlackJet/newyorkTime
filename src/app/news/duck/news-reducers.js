@@ -5,6 +5,7 @@ const INITIAL_STATE = {
     searchString: "",
     isModalBoxVisible: false,
     currentPage: 1,
+    isLoading: false,
     selected: {},
     message: ''
 }
@@ -35,7 +36,21 @@ const newsReducer = (state = INITIAL_STATE, action) => {
             ...state,
             list: [],
             selected: {},
+            searchString: "",
+            currentPage: 1,
             message: action.message
+        }
+        case types.SHOW_LOADER:
+        return {
+            ...state,
+            isLoading: true,
+            list: [],
+            message: ''
+        }
+        case types.HIDE_LOADER:
+        return {
+            ...state,
+            isLoading: false,
         }
         default: return state;
     }

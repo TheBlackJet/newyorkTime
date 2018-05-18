@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropsType from "prop-types";
-import { PaginationContainer } from "./PaginationContainer";
 import { ItemComponent } from "./ItemComponent";
 
 
@@ -17,7 +16,6 @@ export class ItemsComponent extends Component {
     render() {
         return (
             <div className="news-result">
-                <PaginationContainer />
                 {this.props.list.map((item, index) => {
                     return <ItemComponent data={item} key={index} onClick={this.viewItem.bind(this,item)} />
                 })}
