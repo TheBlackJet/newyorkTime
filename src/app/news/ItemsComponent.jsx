@@ -3,16 +3,29 @@ import PropsType from "prop-types";
 import { PaginationContainer } from "./PaginationContainer";
 import { ItemComponent } from "./ItemComponent";
 
-export const ItemsComponent = (props) => {
-    return (
-    <div className="news-result">
-        {props.list.map((item, index) => {
-            return <ItemComponent data={item} key={index} />
-        })}
-        <PaginationContainer />
-    </div>);
+
+
+export class ItemsComponent extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    viewItem(item){
+        this.props.showModalBox(item);
+    }
+
+    render() {
+        return (
+            <div className="news-result">
+                {this.props.list.map((item, index) => {
+                    return <ItemComponent data={item} key={index} onClick={this.viewItem.bind(this,item)} />
+                })}
+                <PaginationContainer />
+            </div>);
+    }
 }
 
 ItemsComponent.PropsType = {
-    splittedText: PropsType.array
+    splittedText: PropsType.Array,
+    showModalBox: PropsType.func
 }

@@ -2,7 +2,10 @@ import types from './news-types';
 
 const INITIAL_STATE = {
     list: [],
-    selected: 0,
+    searchString: "",
+    isModalBoxVisible: false,
+    currentPage: 1,
+    selected: {},
     message: ''
 }
 const newsReducer = (state = INITIAL_STATE, action) => {
@@ -11,7 +14,21 @@ const newsReducer = (state = INITIAL_STATE, action) => {
         return {
             ...state,
             list: action.data,
-            message: ''
+            message: '',
+            searchString: action.searchString,
+            currentPage: action.currentPage
+        }
+        case types.SHOW_MODAL_BOX:
+        return {
+            ...state,
+            isModalBoxVisible: true,
+            selected: action.selected
+        }
+        case types.HIDE_MODAL_BOX:
+        return {
+            ...state,
+            isModalBoxVisible: false,
+            selected: {}
         }
         default: return state;
     }
