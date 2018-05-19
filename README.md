@@ -9,7 +9,11 @@ To get prerequisite packages:
 ```
 yarn install
 ```
+## Build for Production
 
+```
+yarn run build
+```
 
 ## Running
 
