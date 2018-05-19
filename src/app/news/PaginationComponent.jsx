@@ -32,6 +32,6 @@ export class PaginationComponent extends Component {
 PaginationComponent.PropsType = {
     message: PropsType.string,
     searchText: PropsType.func,
-    list: PropsType.Array,
-    searchString: PropsType.String
+    list: PropsType.array,
+    searchString: PropsType.string
 }

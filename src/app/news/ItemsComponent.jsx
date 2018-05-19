@@ -24,6 +24,6 @@ export class ItemsComponent extends Component {
 }
 
 ItemsComponent.PropsType = {
-    splittedText: PropsType.Array,
+    list: PropsType.string,
     showModalBox: PropsType.func
 }

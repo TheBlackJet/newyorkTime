@@ -33,5 +33,6 @@ export class ModalComponent extends Component {
 }
 
 ModalComponent.PropsType = {
-    closeModalBox: PropsType.func
+    closeModalBox: PropsType.func,
+    isModalBoxVisible: PropsType.bool
 }

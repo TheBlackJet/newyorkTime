@@ -49,7 +49,7 @@ export class ItemComponent extends Component{
 }
 
 ItemComponent.PropsType = {
-    data: PropsType.Object,
+    data: PropsType.object,
     onClick: PropsType.func,
-    modal: PropsType.boolean
+    modal: PropsType.bool
 }
